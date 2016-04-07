@@ -1,0 +1,8 @@
+<form>
+  <input type="text" placeholder="TV Show">
+  <input type="button" value="Show!" ng-click="pokemonCtrl.doSearch">
+</form>
+
+<h1>{{ pokemonCtrl.show.show_title }}</h1>
+<p>{{ pokemonCtrl.show.summary | limitTo: 50 }}</p>
+<img ng-src="{{ pokemonCtrl.show.poster }}" alt="">

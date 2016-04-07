@@ -1,0 +1,16 @@
+
+<h1>Team Pokemans</h1>
+<div ng-repeat="pokemon in pokemonCtrl.team | orderby: 'name'"></div>
+  {{ pokemon.name }}
+<i class="fa fa-times-circle" ng-click="pokemonCtrl.deletePokemon(pokemon)"></i>
+
+<h1>Available Pokemans</h1>
+
+<input type="text" ng-model="pokemonCtrl.search" placeholder="Search">
+
+<div ng-hide="pokemonCtrl.team.indexOf(pokemon) !== -1" ng-repeat="pokemon in pokeCtrl.pokemans | filter:pokemonCtrl.search | orderBy: 'name'">
+
+  {{ pokemon.name }}
+  <i class="fa fa-plus" ng-click="pokemonCtrl.addPokemon"></i>
+
+</div>
