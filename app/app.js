@@ -8,6 +8,9 @@ import teams from './modules/teams';
 
 let App = angular.module('app', ['ui.router', 'tiy.teams']);
 
+import practice from './modules/teams';
+
+
 /*
   App Configuration Function
   --------------------------
