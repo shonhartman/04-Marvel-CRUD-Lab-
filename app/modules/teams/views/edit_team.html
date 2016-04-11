@@ -1,6 +1,6 @@
 <h1>Editing the Whatevers</h1>
 
-<h2>Superhero Name({{ editCtrl.heroes.length }}/6)</h2>
+<h2>Superhero Name</h2>
 
 <form ng-hide="editCtrl.heroes.length >= 6">
   <input type="text" placeholder="Captain America" ng-model="editCtrl.newHeroName">
@@ -8,3 +8,14 @@
 </form>
 
 <small>Which hero do you want to add to your team?</small>
+
+<h2 ng-show="editCtrl.heroes.length >= 6">Your team is complete <a ui-sref="teams">Go back to team list</a></h2>
+
+<ul>
+  <li ng-repeat="character in editCtrl.heroes">
+    <img ng-src="{{ character.image }}">
+    <h1>{{ character.name }}</h1>
+    <p>{{ character.description }}</p>
+    <i class="fa fa-times-circle" ng-click="teamCtrl.deleteCharacter(character)"></i>
+  </li>
+</ul>
