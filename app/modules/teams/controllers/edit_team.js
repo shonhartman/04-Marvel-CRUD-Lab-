@@ -60,7 +60,7 @@ class EditTeamController {
 		.get(`https://teams.mybluemix.net/api/teams/${this.id}`)
 		.then((response) => {
 			console.log(response);
-			this.heroes = response.data;
+			this.team = response.data;
 		});
   }
 

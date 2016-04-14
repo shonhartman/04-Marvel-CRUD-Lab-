@@ -50,13 +50,13 @@ function config($stateProvider) {
     .state("edit_team", {
       url: "/:id/edit",
       controller: "EditTeamController as editCtrl",
-      template: require('./view/edit_team.html')
+      template: require('./views/edit_team.html')
     })
 
     .state("team", {
       url: "/:id",
       controller: "TeamController as teamCtrl",
-      template: require('./view/team.html')
+      template: require('./views/team.html')
     });
 }
 
