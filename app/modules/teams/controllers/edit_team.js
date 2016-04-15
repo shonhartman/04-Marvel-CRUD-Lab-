@@ -49,9 +49,6 @@ class EditTeamController {
 		this.newHeroName = "";
 		this.heroes = [];
 
-
-
-
     this.getData();
 	}
 
@@ -61,6 +58,12 @@ class EditTeamController {
 		.then((response) => {
 			console.log(response);
 			this.team = response.data;
+		});
+		this._$http
+		.get(`https://teams.mybluemix.net/api/heroes?filter[where][team_id]=${this.id}`)
+		.then((response) =>{
+			// console.log(response)
+			this.heroes=response.data;
 		});
   }
 
@@ -75,11 +78,11 @@ class EditTeamController {
 
 			this.$_http
 			.post(`https://teams.mybluemix.net/api/heroes`, {
-				name: response.data.data.results[0].name,
-				marvel_id: response.data.data.results[0].id,
-				description: response.data.data.results[0],
+				name: this.name,
+				marvel_id: this.marvel_id.id,
+				description: this.description,
 				team_id: this.id,
-				image: `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`,
+				image: this.image,
 
 				})
 

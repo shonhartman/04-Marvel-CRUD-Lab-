@@ -1,11 +1,12 @@
 <h1>Teams!</h1>
 <small>User created teams of Marvel superheroes</small>
 
+<input type="text" placeholder="new team" ng-model="teamsCtrl">
 <input type="submit" value="New Team" ng-click="teamsCtrl.new_team">
 
 <ul>
   <li ng-repeat="team in teamsCtrl.teams">
-    <a ui-sref="view_team({id: team.id})">
+    <a ui-sref="team({id: team.id})">
       {{ team.name }} by {{ team.creator }}
     </a>
 
